@@ -15,18 +15,10 @@ public class ConveyorExample {
 
     ConveyorExample() {
         CarFactory car = new CarFactoryImpl();
-        cars.add(car.createCar("BIGCAR"));
-        cars.add(car.createCar("FASTCAR"));
-        cars.add(car.createCar("CHEAPCAR"));
-        for (Car c : cars) {
-            c.showCar();
-        }
+        car.assebmleCar("BIGCAR");
+        car.assebmleCar("CHEAPCAR");
+        car.assebmleCar("FASTCAR");
 
-        for (Car c : cars) {
-            c.attachWheels();
-            c.buildEngine();
-            c.showCar();
-        }
     }
 
     public static void main(String[] args) {
