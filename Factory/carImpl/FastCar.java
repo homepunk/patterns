@@ -1,14 +1,16 @@
 package carImpl;
 
 import car.Car;
-import factoryImpl.FastCarFactory;
 
-import static factoryImpl.FastCarFactory.getEngineModel;
-import static factoryImpl.FastCarFactory.getWheels;
+public class FastCar extends Car {
+    private String engine = "No engine";
 
-public class FastCar implements Car {
     @Override
+    public void buildEngine() {
+        this.engine = "Fast car engine installed";
+    }
+
     public void showCar() {
-        System.out.println(getEngineModel() +"\nFast car has " + getWheels() + " wheels\n\n");
+        System.out.println(engine + "\nFast car has " + wheels + " wheels\n\n");
     }
 }

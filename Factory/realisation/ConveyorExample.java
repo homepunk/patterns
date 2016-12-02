@@ -1,7 +1,9 @@
 package realisation;
 
 import car.Car;
-import factory.ConveyorFactory;
+import carImpl.BigCar;
+import carImpl.CheapCar;
+import carImpl.FastCar;
 import factoryImpl.BigCarFactory;
 import factoryImpl.CheapCarFactory;
 import factoryImpl.FastCarFactory;
@@ -13,6 +15,9 @@ public class ConveyorExample {
     List<Car> cars = new ArrayList<Car>();
 
     ConveyorExample() {
+        Car fastCar = new FastCar();
+        Car cheapCar = new CheapCar();
+        Car bigCar = new BigCar();
         FastCarFactory fc = new FastCarFactory();
         BigCarFactory bc = new BigCarFactory();
         CheapCarFactory cc = new CheapCarFactory();
@@ -24,16 +29,10 @@ public class ConveyorExample {
         for (Car car : cars) {
             car.showCar();
         }
-        fc.attachWheels();
-        fc.buildEngine();
-
-        bc.attachWheels();
-        bc.buildEngine();
-
-        cc.attachWheels();
-        cc.buildEngine();
 
         for (Car car : cars) {
+            car.attachWheels();
+            car.buildEngine();
             car.showCar();
         }
     }

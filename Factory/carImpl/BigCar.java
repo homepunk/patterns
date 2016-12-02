@@ -1,14 +1,16 @@
 package carImpl;
 
 import car.Car;
-import factoryImpl.BigCarFactory;
 
-import static factoryImpl.BigCarFactory.getEngineModel;
-import static factoryImpl.BigCarFactory.getWheels;
+public class BigCar extends Car {
+    private String engine = "No engine";
 
-public class BigCar implements Car {
     @Override
+    public void buildEngine() {
+        this.engine = "Big car engine installed";
+    }
+
     public void showCar() {
-        System.out.println(getEngineModel() +"\nBig car has " + getWheels() + " wheels\n\n");
+        System.out.println(engine + "\nBig car has " + wheels + " wheels\n\n");
     }
 }
